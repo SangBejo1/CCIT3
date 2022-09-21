@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"
+	  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+  <title><ui:insert name="title">Default title</ui:insert></title>
+</head>
+<h:body>
+<title>Get value Using Managebean</title>
+<hr/>
+<h:form id="myForm">
+	<h:inputText a:placeholder="Email" value="#{nilai.email}"/>&nbsp;
+	<h:inputSecret a:placeholder="Password" maxlength="8" value="#{nilai.password}"/><br></br>
+	<h:inputTextarea rows="5" a:placeholder="Comment" value="#{nilai.comment}"/><br></br>
+	<h:selectOneMenu value="#{nilai.gender}" >
+	<h:outputText value="select_gender" />
+	<f:selectItem itemLabel="Male" itemValue="Male" />
+	<f:selectItem itemLabel="Female" itemValue="Female" />
+	<f:selectItem itemLabel="Select" />
+</h:selectOneMenu><br></br>
+<h:commandButton value="Get value"></h:commandButton>	
+<hr/>
+	<h:outputText value="Mengambil Alamat Email --->" />
+	#{nilai.email}<br></br>
+	<h:outputText value="Mengambil Alamat Password --->" />
+	#{nilai.password}<br></br>
+	<h:outputText value="Mengambil Alamat Comment --->" />
+	#{nilai.comment}<br></br>
+	<h:outputText value="Mengambil Alamat Gender --->" />
+	#{nilai.gender}<br></br>
+</h:form>
+</h:body>
+
+</html>
